@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>JavaScript Quiz</h1>
+        <div id="question-box">
+            <p id="question">Question text</p>
+            <form id="options-form">
+                <!-- Options will be inserted here dynamically -->
+            </form>
+            <button id="submit-btn" onclick="submitAnswer()">Submit</button>
+            <button id="next-btn" onclick="nextQuestion()" class="hide">Next</button>
+        </div>
+        <div id="score-box" class="hide">
+            <h2>Your Final Score: <span id="score">0</span>
+                / <span id="total">0</span></h2>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
