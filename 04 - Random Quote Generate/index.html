@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f6d365, #fda065);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px 40px;
+            width: 90%;
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1,
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        button {
+            margin-top: 1.2rem;
+            padding: 10px 20px;
+            background-color: teal;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            color: #fff;
+            transition: background-color 0.4s ease-in-out;
+        }
+
+        button:hover {
+            background-color: rgba(0, 128, 128, 0.555);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Random Quote Generator</h1>
+        <div class="quote_box">
+            <p id="quote">Click below to get a quote</p>
+            <span id="authur">- Unknown</span>
+        </div>
+        <button id="generateBtn">Generate Quote</button>
+    </div>
+    <!-- JavaScript -->
+    <script>
+
+        //  Random Quote From Google You Can Also add on your own choice.
+        const quotes = [
+            {
+                quote: "Failure is not fatal, it's the courage to continue that counts.",
+                author: "Muhammad Ali Jinnah"
+            },
+            {
+                quote: "Expect the best. Prepare for the worst. Capitalize on what comes.",
+                author: "Zig Ziglar (Muslim convert)"
+            },
+            {
+                quote: "There are two powers in the world; one is the sword and the other is the pen. There is a great competition and rivalry between the two. There is a third power stronger than both — that of the women.",
+                author: "Muhammad Ali Jinnah"
+            },
+            {
+                quote: "My message to the youth is to wake up, rise, and work hard for the progress of Pakistan.",
+                author: "Abdul Sattar Edhi"
+            },
+            {
+                quote: "People have become educated, but have not yet become human.",
+                author: "Abdul Sattar Edhi"
+            },
+            {
+                quote: "The world is in need of kindness, not wealth.",
+                author: "Edhi Foundation"
+            },
+            {
+                quote: "Do not be afraid of defeat. You are born to win.",
+                author: "Imran Khan"
+            },
+            {
+                quote: "Compassion is not a sign of weakness, but a sign of strength.",
+                author: "Malala Yousafzai"
+            },
+            {
+                quote: "One child, one teacher, one book, and one pen can change the world.",
+                author: "Malala Yousafzai"
+            },
+            {
+                quote: "Let us pick up our books and pens. They are our most powerful weapons.",
+                author: "Malala Yousafzai"
+            }
+        ];
+
+        const quoteText = document.getElementById('quote');
+        const authorText = document.getElementById('authur');
+        const button = document.getElementById('generateBtn');
+
+        // Add EventListner to update content
+
+        button.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+
+            // Updating Quotes & Authur
+
+            quoteText.textContent = randomQuote.quote;
+            authorText.textContent = randomQuote.author;
+        })
+
+
+
+    </script>
+</body>
+
+</html>

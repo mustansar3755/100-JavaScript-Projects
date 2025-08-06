@@ -1,0 +1,120 @@
+<!-- Gradient Color I Use In Project
+ #3C3B3F
+ #605C3C -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #3C3B3F, #605C3C);
+        }
+
+        .slider-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .slider-tack {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            background: rgba(255, 255, 255, 0.2);
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider-tack" id="sliderTrack">
+            <img class="slide active" src="/Image Slider/images/cat.jpg" alt="">
+            <img class="slide" src="/Image Slider/images/dog.jpg" alt="">
+            <img class="slide" src="/Image Slider/images/Power_pulse.jpg" alt="">
+            <img class="slide" src="/Image Slider/images/school.jpg" alt="">
+            <img class="slide" src="/Image Slider/images/school2.jpg" alt="">
+        </div>
+        <button class="nav-button prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav-button next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let currentIndex = 0;
+        const track = document.getElementById("sliderTrack");
+        const slides = document.querySelectorAll(".slide");
+
+        function changeSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slideWidth = slides[0].clientWidth;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        window.addEventListener("resize", updateSlider);
+        updateSlider();
+
+        // To make it auto changing images
+
+        // setInterval(() => changeSlide(1), 4000);
+
+
+    </script>
+</body>
+
+</html>

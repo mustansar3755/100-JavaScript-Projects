@@ -1,0 +1,42 @@
+const quotes = [
+            {
+                quote: "Failure is not fatal, it's the courage to continue that counts.",
+                author: "Muhammad Ali Jinnah"
+            },
+            {
+                quote: "Expect the best. Prepare for the worst. Capitalize on what comes.",
+                author: "Zig Ziglar (Muslim convert)"
+            },
+            {
+                quote: "There are two powers in the world; one is the sword and the other is the pen. There is a great competition and rivalry between the two. There is a third power stronger than both — that of the women.",
+                author: "Muhammad Ali Jinnah"
+            },
+            {
+                quote: "My message to the youth is to wake up, rise, and work hard for the progress of Pakistan.",
+                author: "Abdul Sattar Edhi"
+            },
+            {
+                quote: "People have become educated, but have not yet become human.",
+                author: "Abdul Sattar Edhi"
+            },
+            {
+                quote: "The world is in need of kindness, not wealth.",
+                author: "Edhi Foundation"
+            },
+            {
+                quote: "Do not be afraid of defeat. You are born to win.",
+                author: "Imran Khan"
+            },
+            {
+                quote: "Compassion is not a sign of weakness, but a sign of strength.",
+                author: "Malala Yousafzai"
+            },
+            {
+                quote: "One child, one teacher, one book, and one pen can change the world.",
+                author: "Malala Yousafzai"
+            },
+            {
+                quote: "Let us pick up our books and pens. They are our most powerful weapons.",
+                author: "Malala Yousafzai"
+            }
+        ];
