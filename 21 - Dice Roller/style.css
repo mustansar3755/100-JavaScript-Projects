@@ -4,62 +4,62 @@
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
   background: linear-gradient(135deg, #333131, #92b8bd);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.container {
-  width: 70%;
-  padding: 40px;
+.container{
   text-align: center;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 70%;
   max-width: 500px;
 }
-h1 {
+h1{
   margin-bottom: 30px;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   color: #05455b;
 }
-.dice_area {
+.dice_area{
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
-.dice_box {
+.dice_box{
   background-color: #f1f1f1;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s;
 }
-.dice_box:hover {
+.dice_box:hover{
   transform: scale(1.05);
 }
-.dice_box img {
-  width: 100px;
+.dice_box img{
   height: 100px;
+  width: 100px;
 }
-#result {
-  font-size: 1.3rem;
+#result{
+  font-size: 1.5rem;
   color: #333;
   margin-bottom: 20px;
 }
-button {
-  padding: 12px 30px;
+button{
   background-color: #05455b;
-  color: white;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 8px;
   border: none;
-  font-size: 1rem;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.3s ease;
 }
-button:hover {
+button:hover{
   background-color: #06697d;
 }
