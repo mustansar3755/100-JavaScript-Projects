@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Age Calculator • Modern UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+   
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <div>
+          <div class="title">Age Calculator</div>
+          <div class="subtitle">
+            Calculate exact age in years, months & days — with next birthday
+            countdown.
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <!-- Left: Form -->
+        <div class="card">
+          <form
+            class="form"
+            id="ageForm"
+            onsubmit="event.preventDefault(); calculateAge();"
+          >
+            <div class="row">
+              <div class="field">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" required />
+              </div>
+              <div class="field">
+                <label for="today">Calculate As Of (optional)</label>
+                <input type="date" id="today" />
+              </div>
+            </div>
+            <div class="error" id="error"></div>
+            <div class="btns">
+              <button type="submit">Calculate Age</button>
+              <button type="button" class="ghost" onclick="resetAll()">
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Results -->
+        <div class="card results" id="results" style="display: none">
+          <div class="stat">
+            <div>Exact Age</div>
+            <strong id="ageYMD">—</strong>
+          </div>
+          <div class="stat">
+            <div>Next Birthday</div>
+            <strong id="nextBirthday">—</strong>
+          </div>
+          <div class="stat">
+            <div>Days Until Next Birthday</div>
+            <strong id="daysLeft">—</strong>
+          </div>
+          <div class="stat">
+            <div>Total Time Lived</div>
+            <div style="text-align: right">
+              <div id="totalDays">—</div>
+              <div class="pill" id="totalHours">—</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div>Zodiac</div>
+            <strong id="zodiac">—</strong>
+          </div>
+        </div>
+      </section>
+
+      <p class="note">
+        Tip: Leave “As Of” empty to use today automatically. Built with ❤ using
+        HTML, CSS & JavaScript.
+      </p>
+    </main>
+<script src="script.js"></script>
+    
+  </body>
+</html>

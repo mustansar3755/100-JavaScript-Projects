@@ -1,0 +1,27 @@
+const questions = [
+    {
+        question: "What does JS stand for?",
+        options: ["Java Style", "JavaScript", "JustScript", "JScript"],
+        answer: 1
+    },
+    {
+        question: "Which method is used to print in the console?",
+        options: ["print()", "log()", "console.log()", "write()"],
+        answer: 2
+    },
+    {
+        question: "How do you declare a variable?",
+        options: ["variable a = 5", "let a = 5", "v a = 5", "int a = 5"],
+        answer: 1
+    },
+    {
+        question: "Which is not a JavaScript data type?",
+        options: ["Boolean", "Undefined", "Float", "Number"],
+        answer: 2
+    },
+    {
+        question: "What is the correct syntax for an if statement?",
+        options: ["if (a == b)", "if a = b then", "if a == b", "if: a == b"],
+        answer: 0
+    }
+];

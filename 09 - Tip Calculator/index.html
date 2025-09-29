@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            width: 350px;
+        }
+
+        .calculator h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #0077ff;
+            box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+        }
+
+        .total {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .label {
+            margin-top: 5px;
+            font-weight: 700;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Tip & Split Calculator</h2>
+        <label for="bill" class="label">Bill Amount ($):</label>
+        <input type="number" id="bill" placeholder="e.g.,  100 $">
+        <label for="tip" class="label">Tip Percentage (%):</label>
+        <input type="number" id="tip" placeholder="e.g.,  15%">
+        <label for="people" class="label">Number Of People:</label>
+        <input type="number" id="people" placeholder="e.g.,  2">
+        <div class="total" id="total">Total: $0.00</div>
+        <div class="total" id="each">Each Pay: $0.00</div>
+    </div>
+    <!-- JavaScript -->
+    <script>
+        const billInput = document.getElementById("bill");
+        const tipInput = document.getElementById("tip");
+        const peopleInput = document.getElementById("people");
+        const totalDisplay = document.getElementById("total");
+        const eachDisplay = document.getElementById("each");
+
+        function calculate() {
+            const bill = parseFloat(billInput.value);
+            const tip = parseFloat(tipInput.value);
+            const people = parseFloat(peopleInput.value);
+
+            if (!isNaN(bill) && !isNaN(tip)) {
+                const tipAmount = bill * (tip / 100);
+                const total = bill + tipAmount;
+
+                totalDisplay.textContent = `Total:${total.toFixed(2)}`;
+
+                if (!isNaN(people) && people > 0) {
+                    const each = total / people;
+                    eachDisplay.textContent = `Each Pay: ${each.toFixed(2)}`;
+                } else {
+                    eachDisplay.textContent = `Each Pay: $0.00`;
+                }
+            } else {
+                totalDisplay.textContent = `Total : $0.00`;
+                eachDisplay.textContent = `Each Pay: $0.00`
+            }
+        }
+
+        billInput.addEventListener("input", calculate);
+        tipInput.addEventListener("input", calculate);
+        peopleInput.addEventListener("input", calculate);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2
+  ); /* soft purple gradient */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game Container with Glass Effect */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  color: #ffffff;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  color: #f5f5f5;
+}
+
+/* Input Field */
+input[type="number"] {
+  padding: 0.6rem;
+  width: 180px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #ffffffdd;
+  color: #333;
+}
+
+/* Buttons */
+button {
+  padding: 0.6rem 1.2rem;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7e5f; /* peach/orange */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #feb47b;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffddb0;
+}
+
+/* Message Box */
+#message {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+/* Attempts */
+.attempts {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* Message Color Variants */
+.success {
+  background-color: #38a169; /* green */
+  color: #ffffff;
+}
+
+.low {
+  background-color: #f6ad55; /* orange */
+  color: #000000;
+}
+
+.high {
+  background-color: #f56565; /* red */
+  color: #ffffff;
+}
+
+.invalid {
+  background-color: #ed8936; /* deep orange */
+  color: #ffffff;
+}

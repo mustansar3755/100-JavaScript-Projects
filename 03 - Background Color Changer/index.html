@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Color Changer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT';
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            transition: background-color 0.7s ease-in-out;
+        }
+
+        .container {
+            padding: 30px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #colorCode {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #222;
+            background-color: #f0f0f0;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 10px;
+            margin-top: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Background Color Changer</h1>
+        <p>
+            Click Below Button To Change Background Color
+        </p>
+        <button id="changeColor">Change Color</button>
+        <div id="colorCode">#ffffff</div>
+    </div>
+    <!-- JavaScript -->
+    <script>
+
+        const button = document.getElementById('changeColor');
+        const colorCode = document.getElementById('colorCode');
+
+        function getRandomColor() {
+            const hex = Math.floor(Math.random() * 0xffffff).toString(16);
+            return `#${hex.padStart(6, '0')}`;
+        }
+
+        // ADD Event Listner
+        button.addEventListener('click', () => {
+            const newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
+            colorCode.textContent = newColor;
+            colorCode.style.backgroundColor = newColor;
+        })
+    </script>
+</body>
+
+</html>

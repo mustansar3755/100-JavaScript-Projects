@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: lightblue;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .increase {
+            background-color: #4caf50;
+        }
+
+        .reset {
+            background-color: #ff9800;
+        }
+
+        .decrease {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn decrease" onclick="decrease()">-</button>
+            <button class="btn reset" onclick="reset()">Reset</button>
+            <button class="btn increase" onclick="increase()">+</button>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script>
+        let counter = 0;
+
+        function uploadDisplay() {
+            document.getElementById('display').innerHTML = counter;
+        }
+        function increase() {
+            counter++;
+            uploadDisplay();
+        }
+        function decrease() {
+            counter--;
+            uploadDisplay();
+        }
+        function reset() {
+            counter = 0;
+            uploadDisplay();
+        }
+
+    </script>
+</body>
+
+</html>

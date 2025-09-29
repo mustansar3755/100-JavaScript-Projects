@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: linear-gradient(to right, #4facfe,#00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  width: 360px;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.container h1{
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.container label{
+  display: block;
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+.container input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 1.2rem;
+}
+.container input:focus{
+  outline: none;
+  border-color: #4facfe;
+}
+.note{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+/* Change Colors of all inputs for more beautifull UI */
+#celsius{
+  background-color: #ffe5e5;
+  border: 1px solid #ff6b6b;
+}
+#fahrenheit{
+  background-color: #e5f0ff;
+  border: 1px solid #4facfe;
+}
+#kelvin{
+  background-color: #eaffea;
+  border: 1px solid #34d399;
+}
