@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern - QR Code Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <header>
+          <h1>QR Code Generator</h1>
+          <p>
+            Type text, links, or Wi-fi credentials - pick colors and size.Built
+            with smart browser QR library
+          </p>
+        </header>
+
+        <div class="controls">
+          <div class="field">
+            <label for="text">Text or URL</label>
+            <textarea
+              placeholder="https://example.com - or any text you want encoded"
+              id="text"
+            >https://www.example.com
+                </textarea
+            >
+          </div>
+
+          <div class="row">
+            <div class="field small">
+              <label for="size">Size</label>
+              <input type="range" min="120" max="800" id="size" value="250" />
+            </div>
+            <div class="field" style="width: 140px">
+              <label for="ec">Error Correction</label>
+
+              <select id="ec">
+                <option value="L">L - Low (7%)</option>
+                <option value="M">M - Medium (15%)</option>
+                <option value="Q">Q - Quartile (25%)</option>
+                <option value="H">H - Hight (30%)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="options">
+            <div class="switch">
+              <label for="fg">Color</label>
+              <input type="color" value="#0b1220" id="fg" />
+            </div>
+            <div class="switch">
+              <label for="bg">Background</label>
+              <input type="color" value="#FFFFFF" id="bg" />
+            </div>
+            <div style="margin-left: auto" class="meta">
+              <small>
+                Preview Size:
+                <span id="sizeValue">280</span>px
+              </small>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="generate" class="btn generate">Generate QR</button>
+            <button id="download" class="btn download">Download PNG</button>
+            <button id="clear" class="btn clear">Clear</button>
+          </div>
+
+          <footer>
+            <small>
+              ➡ Tip: For Wi-Fi sharing use the format
+              <code>WIFI:S:NetworkName;T:WPA;P:password</code>
+            </small>
+          </footer>
+        </div>
+      </div>
+
+      <div class="card preview-box">
+        <div id="qrWrap" class="qr-wrap">
+          <!-- *QR Image will be inserted here -->
+
+          <img
+            id="qrImg"
+            alt=" QR Preview"
+            style="
+              max-width: 92%;
+              max-height: 92%;
+              border-radius: 8px;
+              display: block;
+            "
+          />
+        </div>
+        <div class="meta">
+          <small id="status"> Ready </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR code library (browser build) -->
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
