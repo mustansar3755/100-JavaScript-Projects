@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Tabs Component - HTML CSS JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" role="application" aria-label="Modern tabs demo">
+      <div class="header">
+        <div class="title">
+          <div class="logo">M</div>
+          <div>
+            <h1>Tabs Component - Modern UI</h1>
+            <p class="lead">
+              Plain HTML / CSS / JS - accessible, responsive & animated
+            </p>
+          </div>
+        </div>
+        <div class="small">Demo Copy & Customize</div>
+      </div>
+      <!-- Tabs List -->
+      <div class="tabs">
+        <div
+          class="tablist"
+          role="tablist"
+          aria-orientation="vertical"
+          id="demoTablist"
+        >
+          <button
+            class="tab active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-1"
+            id="tab-1"
+            tabindex="0"
+          >
+            <div
+              class="icon"
+              aria-hidden="true"
+              style="background: linear-gradient(135deg, #ff7a18, #af002d)"
+            >
+              A
+            </div>
+            <div>
+              <div style="font-weight: 600">Overview</div>
+              <div class="small">Quick intro & feactures</div>
+            </div>
+          </button>
+          <!-- Btn 2nd -->
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+            tabindex="-1"
+          >
+            <div
+              class="icon"
+              aria-hidden="true"
+              style="background: linear-gradient(135deg, #21d4fd, #b721ff)"
+            >
+              B
+            </div>
+            <div>
+              <div style="font-weight: 600">Design</div>
+              <div class="small">Colors & Layout</div>
+            </div>
+          </button>
+          <!-- Btn 3rd -->
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+            tabindex="-1"
+          >
+            <div
+              class="icon"
+              aria-hidden="true"
+              style="background: linear-gradient(135deg, #7bff6b, #00b09b)"
+            >
+              C
+            </div>
+            <div>
+              <div style="font-weight: 600">Code</div>
+              <div class="small">HTML, CSS, JavaScript</div>
+            </div>
+          </button>
+          <!-- 4th Btn -->
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-4"
+            id="tab-4"
+            tabindex="-1"
+          >
+            <div
+              class="icon"
+              aria-hidden="true"
+              style="background: linear-gradient(135deg, #ffd54f, #ff6b8a)"
+            >
+              D
+            </div>
+            <div>
+              <div style="font-weight: 600">Accessibility</div>
+              <div class="small">Aria & Keyboard</div>
+            </div>
+          </button>
+          <!-- Hint Section -->
+          <div class="hint">
+            Use ⬅➡ or Home / End to navigate, Tab to focus content.
+          </div>
+        </div>
+        <!-- Tab Panel -->
+        <div class="tabpanel" tabindex="0">
+          <div class="accent-stripe" aria-hidden="true"></div>
+          <article
+            id="panel-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+            class="active"
+          >
+            <h3 style="margin-top: 0">Overview</h3>
+            <p class="small">
+              This tab component demonstrates a modern card-like UI with
+              animated tab panels, keyboard accessibility and responsive layout.
+              Use it in dashboards, settings, or documentation pages.
+            </p>
+            <div class="cards">
+              <div class="card">
+                <strong>Responsive</strong>
+                <div class="small">Stacks on small screens</div>
+              </div>
+              <div class="card">
+                <strong>Accessible</strong>
+                <div class="small">Aria roles + keyboard</div>
+              </div>
+              <div class="card">
+                <strong>Animated</strong>
+                <div class="small">Soft entrance animation</div>
+              </div>
+              <div class="card">
+                <strong>Lightweight</strong>
+                <div class="small">Plain JS - no libs</div>
+              </div>
+            </div>
+          </article>
+          <!-- 2nd Article -->
+          <!-- I will Change later this section hidden -->
+          <article id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+            <h3 style="margin-top: 0">Design</h3>
+            <p class="small">
+              A layered glass effect with subtle gradients provides a modern
+              look. Icons are color-graded for quick visual scanning. Spacing
+              and rounded corners give a friendly feel
+            </p>
+            <!-- Cards Section -->
+            <div class="cards">
+              <div class="card">
+                <strong>Gradients</strong>
+                <div class="small">Accent gradients for icons</div>
+              </div>
+              <div class="card">
+                <strong>Glass</strong>
+                <div class="small">Backdrop blur + translucency</div>
+              </div>
+              <div class="card">
+                <strong>Animated</strong>
+                <div class="small">Soft entrance animation</div>
+              </div>
+              <div class="card">
+                <strong>Typography</strong>
+                <div class="small">Clean sans-serif -Inter</div>
+              </div>
+            </div>
+          </article>
+          <!-- Article 3rd -->
+          <article id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+            <h3 style="margin-top: 0">Code</h3>
+            <p class="small">
+              This component uses a small JS module to manage state and keyboard
+              navigation. You can extract it into a reusable component for
+              frameworks.
+            </p>
+            <pre
+              style="
+                background: rgba(0, 0, 0, 0.25);
+                padding: 12px;
+                border-radius: 8px;
+                overflow: auto;
+                font-size: 13px;
+              "
+            >
+&lt;!-- Example: activateTab(index) --&gt;
+function activateTab(index){
+  // set aria-selected, toggle classes, show/hide panels
+}
+            </pre>
+          </article>
+          <!-- Article 4th -->
+          <article id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+            <h3 style="margin-top: 0">Accessibility</h3>
+            <p class="small">
+              Tabs support ARIA roles (tablist, tab, tabpanel) and keyboard
+              controls (Arrow keys, Home/End). When a tab is selected, focus
+              remains logical and each panel is labeled.
+            </p>
+          </article>
+        </div>
+        <!-- End tabPanel -->
+      </div>
+      <!-- End Tabs -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
