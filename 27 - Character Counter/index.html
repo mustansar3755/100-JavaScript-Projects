@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Character Counter — Mini Project #27</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="title">
+    <h1 id="title">Character Counter — Mini Project #27</h1>
+    <p class="lead">Live character & word counter with options (exclude spaces, set max length). Simple, mobile-friendly and accessible.</p>
+
+    <div class="controls" aria-hidden="false">
+      <label title="Max characters allowed">
+        Max length
+        <input id="maxLen" type="number" min="1" value="200" />
+      </label>
+
+      <label title="Exclude spaces from count">
+        <input id="excludeSpaces" type="checkbox" />
+        Exclude spaces
+      </label>
+
+      <label title="Show remaining characters">
+        <input id="showRemaining" type="checkbox" checked />
+        Show remaining
+      </label>
+    </div>
+
+    <textarea id="text" placeholder="Type or paste text here… (supports copy / clear)"></textarea>
+
+    <div class="status">
+      <div class="counts" aria-live="polite">
+        <div class="item">Chars: <span id="charCount" class="big">0</span></div>
+        <div class="item">Words: <span id="wordCount" class="big">0</span></div>
+        <div class="item">Spaces: <span id="spaceCount" class="big">0</span></div>
+      </div>
+
+      <div class="actions">
+        <div id="remainingBadge" class="remaining ok" aria-hidden="false">Remaining: 200</div>
+        <button id="copyBtn" title="Copy text to clipboard">Copy</button>
+        <button id="clearBtn" title="Clear textarea">Clear</button>
+        <button id="sampleBtn" class="ghost" title="Insert sample text">Sample</button>
+        <button id="downloadBtn" class="primary" title="Download text as .txt">Download</button>
+      </div>
+    </div>
+
+    <p class="footer-note">Tip: Toggle "Exclude spaces" to count only visible characters (letters, numbers, punctuation).</p>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
