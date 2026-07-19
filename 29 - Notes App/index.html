@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Tacking App | HTML CSS JS</title>
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="board">
+      <header class="board_header">
+        <div class="board_title">
+          <span class="board_eyebrow">Notes Tacking App</span>
+          <h1>Your Notes</h1>
+        </div>
+        <p class="board_count"><span id="noteCount">0</span>saved</p>
+      </header>
+      <!-- Form -->
+      <form id="noteForm" class="composer">
+        <input
+          type="text"
+          placeholder="Title"
+          id="noteTitle"
+          class="composer_title"
+          maxlength="60"
+          autocomplete="off"
+        />
+        <textarea
+          id="noteBody"
+          class="composer_body"
+          placeholder="Write something worth remembering...."
+          rows="3"
+          maxlength="500"
+        ></textarea>
+        <!-- Form Footer -->
+        <div class="composer_footer">
+          <div class="swatches" id="swatches">
+            <button
+              type="button"
+              class="swatch swatch--amber is-active"
+              data-color="amber"
+              aria-label="Amber note"
+            ></button>
+            <button
+              type="button"
+              class="swatch swatch--teal"
+              data-color="teal"
+              aria-label="Teal note"
+            ></button>
+            <button
+              type="button"
+              class="swatch swatch--rose"
+              data-color="rose"
+              aria-label="Rose note"
+            ></button>
+            <button
+              type="button"
+              class="swatch swatch--violet"
+              data-color="violet"
+              aria-label="Violet note"
+            ></button>
+          </div>
+          <button type="submit" class="btn-add">
+            <span>Add Note</span>
+          </button>
+        </div>
+      </form>
+      <!-- Main Body View -->
+      <main id="noteGrid" class="notes-grid">
+        <!-- Notes injected here by JS -->
+      </main>
+      <p id="emptyState" class="empty-state">
+        No notes yet - the board is quiet.Write your first one above.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

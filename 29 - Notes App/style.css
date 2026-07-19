@@ -1,0 +1,293 @@
+/* CSS VARIABLES */
+:root {
+  /* Base surface Color */
+  --bg-deep: #171922;
+  --bg-panel: #1f222e;
+  --bg-panel-raised: #262a38;
+  --border-soft: #333748;
+  /* Text Color */
+  --text-primary: #f3f1ea;
+  --text-muted: #9a9dea;
+  --text-faint: #5d6072;
+  /* Paper note colors ( backgrounds) */
+  --paper-amber: #f4e3b2;
+  --paper-teal: #bfe3dd;
+  --paper-rose: #f2c9ce;
+  --paper-violet: #d9ccf0;
+  /* Note ink (text on paper) */
+  --ink: #24262e;
+  /* Accent/Interactive */
+  --accent: #e8a33d;
+  --accent-hover: #f2b458;
+  --accent-link: #201705;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.035);
+  --shadow-lift: 0 14px 32px rgba(0, 0, 0, 0.4);
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  /* Fonts */
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20%-10%, #232636 0%, transparent 55%),
+    var(--bg-deep);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  padding: 56px 20px 80px;
+}
+/* Board Layout */
+.board {
+  width: 100%;
+  max-width: 880px;
+}
+.board_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+.board_eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.board_title h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+.board_count {
+  color: var(--text-muted);
+  font-style: 14px;
+}
+#noteCount {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+/* Form Styling */
+
+.composer {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+.composer:focus-within {
+  border-color: var(--accent);
+}
+.composer_title {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-style: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.composer_title::placeholder {
+  color: var(--text-faint);
+}
+.composer_body {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.composer_body::placeholder {
+  color: var(--text-faint);
+}
+.composer_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+/* Coloe Swatches */
+.swatches {
+  display: flex;
+  gap: 10px;
+}
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    border-color 0.152 ease;
+}
+.swatch:hover {
+  transform: scale(1.12);
+}
+.swatch.is-active {
+  border-color: var(--text-primary);
+}
+.swatch--amber {
+  background-color: var(--paper-amber);
+}
+.swatch--teal {
+  background-color: var(--paper-teal);
+}
+.swatch--rose {
+  background-color: var(--paper-rose);
+}
+.swatch--violet {
+  background-color: var(--paper-violet);
+}
+
+.btn-add {
+  display: inline-block;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--accent-link);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-add:hover {
+  background-color: var(--accent-hover);
+}
+.btn-add:active {
+  transform: scale(0.95);
+}
+
+/* Empty State */
+.empty-state {
+  display: none;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 14px;
+  padding: 60px 0;
+}
+.empty-state.is-visible {
+  display: block;
+}
+
+/* Notes Grid-- These CSS Will Apply When Note Card Form By JS */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+.note {
+  position: relative;
+  border-radius: var(--radius-md);
+  padding: 18px 18px 44px;
+  min-height: 140px;
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+  transform: rotate(var(--tilt, 0deg));
+  transition: all 0.2s ease;
+  animation: pop-in 0.25s ease;
+}
+.note:hover {
+  transform: rotate(0deg), translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.note--amber {
+  background-color: var(--paper-amber);
+}
+.note--teal {
+  background-color: var(--paper-teal);
+}
+.note--rose {
+  background-color: var(--paper-rose);
+}
+.note--violet {
+  background-color: var(--paper-violet);
+}
+.note__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+.note__body {
+  font-size: 13.5px;
+  line-height: 1.55;
+  opacity: 0.85;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.note__meta {
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  font-size: 11px;
+  opacity: 0.55;
+  letter-spacing: 0.02em;
+}
+.note__delete {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+.note:hover .note__delete {
+  opacity: 1;
+}
+.note__delete:hover {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(var(--tilt, 0deg));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--tilt, 0deg));
+  }
+}
