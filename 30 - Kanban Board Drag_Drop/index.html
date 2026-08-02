@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag & Drop Kanban Board | SmartLearning Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <span class="logo-icon">📝</span>
+        <h1>TaskFlow <span>Kanban</span></h1>
+      </div>
+      <button id="addTaskBtn" class="add-task-btn">Add Task</button>
+    </header>
+    <!-- Main Body -->
+    <main class="board" id="board">
+      <!-- Todo Column -->
+      <section class="column" data-status="todo">
+        <div class="column-header">
+          <h2><span class="dot dot-todo"></span>To Do</h2>
+          <span class="task-count" id="count-todo">0</span>
+        </div>
+        <div class="task-list" id="todo" data-status="todo"></div>
+      </section>
+      <!-- In-Progress Column -->
+      <section class="column" data-status="inprogress">
+        <div class="column-header">
+          <h2><span class="dot dot-inprogress"></span>In Progress</h2>
+          <span class="task-count" id="count-inprogress">0</span>
+        </div>
+        <div class="task-list" id="inprogress" data-status="inprogress"></div>
+      </section>
+      <!-- Done Column -->
+      <section class="column" data-status="done">
+        <div class="column-header">
+          <h2><span class="dot dot-done"></span>Done</h2>
+          <span class="task-count" id="count-done">0</span>
+        </div>
+        <div class="task-list" id="done" data-status="done"></div>
+      </section>
+    </main>
+    <!-- Add Task Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <h3 id="modalTitle">Add New Task</h3>
+        <label for="taskTitle">Title</label>
+        <input
+          type="text"
+          id="taskTitle"
+          placeholder="e.g. Design landing page"
+          maxlength="60"
+        />
+        <label for="taskDesc">Description</label>
+        <textarea
+          id="taskDesc"
+          placeholder="Add more details....."
+          rows="3"
+        ></textarea>
+        <label for="taskPriority">Priority</label>
+        <select id="taskPriority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <div class="modal-actions">
+          <button id="cancelBtn" class="btn-secondary">Cancel</button>
+          <button id="saveBtn" class="btn-primary">Save Task</button>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Confirm Toast -->
+    <div class="toast" id="toast"></div>
+    <!-- JavaScript File Link -->
+    <script src="script.js"></script>
+  </body>
+</html>
