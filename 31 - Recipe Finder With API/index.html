@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Recipe Finder | JS Mastery #31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background texture layer -->
+  <div class="grain"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">🍕</span>
+        <div class="brand-text">
+          <h1>Recipe Finder</h1>
+          <p>find something worth cooking</p>
+        </div>
+      </div>
+
+      <nav class="view-toggle" role="tablist" aria-label="View switch">
+        <button class="toggle-btn is-active" data-view="search" role="tab" aria-selected="true">Search</button>
+        <button class="toggle-btn" data-view="favorites" role="tab" aria-selected="false">
+          Favorites <span class="fav-count" id="favCount">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEARCH VIEW -->
+    <section class="view" id="searchView">
+      <div class="control-bar">
+        <form id="searchForm" class="search-form" autocomplete="off">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search a dish... e.g. chicken, pasta, cake"
+            aria-label="Search recipes"
+          />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <div class="filter-row">
+          <select id="categorySelect" aria-label="Filter by category">
+            <option value="">All categories</option>
+          </select>
+          <button id="randomBtn" class="btn btn-ghost" type="button">
+            🎁 Surprise me
+          </button>
+        </div>
+      </div>
+
+      <p class="status-line" id="statusLine">Type a dish name or pick a category to begin.</p>
+
+      <div class="card-grid" id="resultsGrid"></div>
+    </section>
+
+    <!-- FAVORITES VIEW -->
+    <section class="view is-hidden" id="favoritesView">
+      <p class="status-line" id="favStatusLine">No saved recipes yet.</p>
+      <div class="card-grid" id="favoritesGrid"></div>
+    </section>
+  </main>
+
+  <!-- RECIPE MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal-content" id="modalContent">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
